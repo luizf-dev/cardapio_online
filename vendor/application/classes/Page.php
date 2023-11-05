@@ -49,7 +49,7 @@ class Page {
      * Segundo parametro '$tpl_dir' é para o caminho do Diretório dos templates
     */
 
-    public function __construct($opts = array(), $tpl_dir = "./views/"){
+    public function __construct($opts = array(), $tpl_dir = "Views/"){
 
         //*Mescla as opções passadas com as opções padrões
         $this->options = array_merge($this->defaults, $opts);
@@ -60,7 +60,7 @@ class Page {
         //? Windows : views/ e ./views-cache
         $config = array(
             "tpl_dir"=> $tpl_dir,
-            "cache_dir"=> "./views-cache/",
+            "cache_dir"=> "./Views-cache/",
             "debug"=>true
         );
 
@@ -77,10 +77,7 @@ class Page {
         if($this->options["header"] == true) $this->tpl->draw("header");
 
         //* Renderiza a navbar se a opção "navbar" estiver habilitada
-        if($this->options["navbar"] == true) $this->tpl->draw("navbar");
-            
-         
-    
+        if($this->options["navbar"] == true) $this->tpl->draw("navbar"); 
     }
 
     /*

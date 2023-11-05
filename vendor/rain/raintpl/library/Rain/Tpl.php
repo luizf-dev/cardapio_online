@@ -188,7 +188,7 @@ class Tpl {
 
         // if the template doesn't exsist throw an error
         if (!file_exists($templateFilepath)) {
-            $e = new Tpl\NotFoundException('Template ' . $templateName . ' not found!');
+            $e = new Tpl\NotFoundException('O seu Template "' . $templateName . '" não foi carregado! Verifique possíveis erros.');
             throw $e->templateFile($templateFilepath);
         }
 

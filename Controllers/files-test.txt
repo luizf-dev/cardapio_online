@@ -1,0 +1,15 @@
+<!-- {if="$msgSucesso != ''"}        
+            <script>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sucesso',
+                    text: '{$msgSucesso}'
+                });
+            </script>       
+    {/if} -->
+
+<!-- {if="$msgErro != ''"}
+        <div class="alert alert-danger">
+            {$msgErro}
+        </div>
+    {/if} -->

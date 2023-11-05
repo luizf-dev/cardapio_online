@@ -1,0 +1,84 @@
+<main>
+        <h3>Nosso Cardápio</h3>
+        <p>Cada prato que servimos é uma obra de arte gastronômica cuidadosamente elaborada por nossos talentosos chefs. Nossa culinária é uma fusão de tradição e inovação, com uma paleta de sabores que abraça influências de todo o mundo. Desde pratos clássicos até criações contemporâneas, o nosso cardápio oferece uma variedade de opções para atender a todos os gostos e preferências.</p>
+        <br>
+        <hr>
+        <br>      
+
+       <!--
+                <div id="link-category">
+                        <a href="#lanches" class="pill">Lanches</a>
+                        <a href="#massas" class="pill">Massas</a>
+                        <a href="#sobremesas" class="pill">Sobremesas</a>
+                        <a href="#bebidas" class="pill">Bebidas</a>
+                </div>
+        -->
+
+        <h4 id="lanches">🍔 Lanches</h4>
+        <section>
+                {loop="$lanches"}
+                <div class="card">                        
+                        <img src="assets/img/{$value.imagem}" alt="food">
+                        <div class="card-body">
+                                <h5>{$value.nome}</h5>
+                                <p>{$value.descricao}</p>
+                                <p class="price">{function="formatarPreco($value.preco)"}</p>    
+                        </div>
+                </div> 
+                {/loop}        
+        </section>
+        <br>
+        <hr>
+        <br>
+
+        <h4 id="massas">🍝 Massas</h4>
+        <section>
+                {loop="$massas"}
+                <div class="card">
+                         <img src="assets/img/{$value.imagem}" alt="food">
+                        <div class="card-body">
+                                <h5>{$value.nome}</h5>
+                                <p>{$value.descricao}</p>
+                                <p class="price">{function="formatarPreco($value.preco)"}</p>
+                        </div>
+                </div>   
+                {/loop}            
+        </section>
+        <br>
+        <hr>
+        <br>
+
+        <h4 id="sobremesas">🍝 Sobremesas</h4>
+        <section>
+                {loop="$sobremesas"}
+                <div class="card">
+                         <img src="assets/img/{$value.imagem}" alt="food">
+                        <div class="card-body">
+                                <h5>{$value.nome}</h5>
+                                <p>{$value.descricao}</p>
+                                <p class="price">{function="formatarPreco($value.preco)"}</p>
+                        </div>
+                </div>   
+                {/loop}            
+        </section>
+        <br>
+        <hr>
+        <br>
+
+        <h4 id="bebidas">🍝 Bebidas</h4>
+        <section>
+                {loop="$bebidas"}
+                <div class="card">
+                         <img src="assets/img/{$value.imagem}" alt="food">
+                        <div class="card-body">
+                                <h5>{$value.nome}</h5>
+                                <p>{$value.descricao}</p>
+                                <p class="price">{function="formatarPreco($value.preco)"}</p>
+                        </div>
+                </div>   
+                {/loop}            
+        </section>
+        <br>
+        <hr>
+        <br>
+</main>

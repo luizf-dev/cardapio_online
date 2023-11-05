@@ -1,7 +1,14 @@
-<main>
+<?php if(!class_exists('Rain\Tpl')){exit;}?><main>
     <h3>Cadastrar Produto</h3>
 
-    <form method="POST" action="/cardapio_online/cadastrar-produto/">
+    <?php if( $msgErro != '' ){ ?>        
+        <script>
+            msgErro('<?php echo htmlspecialchars( $msgErro, ENT_COMPAT, 'UTF-8', FALSE ); ?>');
+        </script>
+    <?php } ?>
+
+
+    <form method="POST" action="/cardapio_online/cadastrar-produto">
         <div class="input-group">
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome" placeholder="Nome do produto">
@@ -11,8 +18,8 @@
             <input type="text" name="preco" id="preco" placeholder="Preço do produto">
         </div>
         <div class="input-group">
-            <label for="imagem">Imagem</label>
-            <input type="text" name="imagem" id="imagem">
+         <!--<label for="imagem">Imagem</label>-->
+            <input type="hidden" name="imagem" value="imagem-padrao.jpeg" id="imagem">
         </div>
         <div class="input-group">
             <label for="descricao">Descrição</label>
@@ -21,7 +28,12 @@
         </div>
         <div class="input-group">
             <label for="categoria">Categoria</label>
-            <input type="text" name="categoria" id="categoria">
+            <select name="categoria" id="categoria">
+                <option value="lanches">Lanches</option>
+                <option value="massas">Massas</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="sobremesas">Sobremesas</option>
+            </select>
         </div>
         <div class="form-actions">
             <a href="/cardapio_online" class="btn default">

@@ -22,8 +22,15 @@ html{
     --background-color-nav: #333;
 }
 
+hr{
+    border: 1px solid #23b35f;
+    width: 70%;
+    margin: 0 auto;
+}
+
 a {
     color: var(--font-color);
+    text-decoration: none;
 }
 
 body {
@@ -42,6 +49,7 @@ nav {
     width: 100%;
     background-color: var(--background-color-nav);
     top: 0;
+    z-index: 1;
 }
 
 nav ul{
@@ -57,10 +65,35 @@ nav ul li.active{
 
 nav li:hover{
     border-bottom: solid 2px var(--primary-color);
+    font-weight: 900;
 }
 
 nav ul li a{
     color: var(--background-color);
+}
+
+//* Submenu dropdown
+nav .submenu{
+    display: none;
+    position: absolute;
+    background-color: var(--background-color-nav);
+    color: #fff;
+    padding: 20px;
+    box-shadow: 00 10 rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+nav .dropdown:hover .submenu{
+    display: block;  
+}
+
+nav .submenu li{
+    margin: 0;
+    padding: 5px;
+}
+
+nav .submenu a:hover{
+    color: rgba(69, 216, 32, 0.467);
 }
 
 main{
