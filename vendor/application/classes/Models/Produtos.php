@@ -207,5 +207,23 @@ class  Produtos extends Connection{
             return "Erro no banco de dados: " . $e->getMessage();
         }
     }
+
+    //* método cadastrar uma imagem para o produto
+    public function cadastrarImagem($id, $imagem){
+
+        $query = 'UPDATE tb_produtos SET imagem = :imagem WHERE id = :id';
+        $stmt = $this->database->prepare($query);
+        $stmt->bindValue(':id', $id);
+        $stmt->bindValue(':imagem', $imagem);
+        $stmt->execute();
+
+        $result = $stmt->rowCount();
+
+        if($result == 0){
+            return false;
+        }
+
+        return true;
+    }
     
 }

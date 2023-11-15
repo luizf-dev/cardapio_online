@@ -10,7 +10,7 @@ use application\Mensagens;
 //* ====== Rota para página de cadastro de produtos ============**/
 $app->get('/cadastrar-produto', function(){
 
-    $page = new Page([]);
+    $page = new Page();
     $page->renderPage("cadastrar-produto",[
         "msgErro" => Mensagens::getMsgErro()
     ]);

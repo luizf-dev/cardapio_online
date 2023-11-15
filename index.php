@@ -18,5 +18,6 @@ require './Controllers/cadastrar-produtos.php';
 require './Controllers/listar-produtos.php';
 require './Controllers/atualizar-produtos.php';
 require './Controllers/deletar-produtos.php';
+require './Controllers/cadastrar-imagem.php';
 
 $app->run();
