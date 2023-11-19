@@ -13,3 +13,12 @@
             {$msgErro}
         </div>
     {/if} -->
+
+
+
+   /* var_dump($nomeArquivoAnterior);
+    echo '<hr>';
+    var_dump($nomeImagemAtual);
+    echo '<hr>';
+    var_dump($imagemAnterior);
+    exit;*/

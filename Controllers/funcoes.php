@@ -1,10 +1,10 @@
 <?php 
 
 //*método para formatar o preço do produto
-    function formatarPreco($vlprice){
+    function formatarPreco($preco){
 
-        if(!$vlprice > 0) $vlprice = 0;
+        if(!$preco > 0) $preco = 0;
     
-        return "R$ " .number_format($vlprice, 2 , ",", ".");
+        return "R$ " .number_format($preco, 2 , ",", ".");
     
     }

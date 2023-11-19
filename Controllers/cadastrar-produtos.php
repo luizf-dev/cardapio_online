@@ -20,17 +20,19 @@ $app->get('/cadastrar-produto', function(){
 //* ====== Rota via post para inserir os produtos no banco======**/
 $app->post('/cadastrar-produto/', function(){
 
+    $imagem = 'imagem-padrao.jpeg';
+
     //*conexao com a base de dados
     $connect = Sql::getDatabase();
 
     $produto = new Produtos($connect);
     $produto->__set('nome', $_POST['nome']);
     $produto->__set('preco', $_POST['preco']);
-    $produto->__set('imagem', $_POST['imagem']);
+    $produto->__set('imagem', $imagem);
     $produto->__set('descricao', $_POST['descricao']);
     $produto->__set('categoria', $_POST['categoria']);
 
-    if($_POST == 'nome' || $_POST['preco'] == '' || $_POST['imagem'] == '' || $_POST['descricao'] == '' || $_POST['categoria'] == ''){
+    if($_POST == 'nome' || $_POST['preco'] == '' || $_POST['descricao'] == '' || $_POST['categoria'] == ''){
         Mensagens::setMsgErro('Preencha os campos corretamente!');
         header('Location: /cardapio_online/cadastrar-produto');
         exit;

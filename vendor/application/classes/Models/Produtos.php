@@ -45,8 +45,7 @@ class  Produtos extends Connection{
         }
 
         return $produtos;
-    } 
-  
+    }   
 
     //* método listar Lanches
     public function listarLanches(){
@@ -225,5 +224,32 @@ class  Produtos extends Connection{
 
         return true;
     }
+
+    //*método para verificar se existe imagem associada ao id do 
+    //*produto cadastrada no banco, caso exista e, se a imagem do produto
+    //*for alterada, o controller irá remover a imagem antiga da pasta de uploads
+    //*se não existir imagem com id associado, retorna o valor da imagem padrao cadastrada
+    public function obterNomeImagem($id){
+        try {
+
+            $query = "SELECT imagem FROM tb_produtos WHERE id = :id";
+            $stmt = $this->database->prepare($query);
+            $stmt->bindValue(':id', $id);
+            $stmt->execute();
+
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if($result && isset($result['imagem'])){
+                return $result['imagem'];
+            }else{
+                return 'imagem-padrao.jpeg';
+            }       
+        } catch (PDOException $e) {
+            
+            return "Erro no banco de dados: " . $e->getMessage();
+        }
+    }
+
     
 }
+

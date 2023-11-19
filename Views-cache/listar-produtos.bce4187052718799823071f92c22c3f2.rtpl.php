@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="actions">
-                <a class="btn" href="/cardapio_online/cadastrar-imagem/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/new/"> + Cadastrar Imagem</a>
+                <a class="btn" href="/cardapio_online/cadastrar-imagem/<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/new/"> + Cadastrar / Atualizar Imagem</a>
                 <a href="javascript:void(0)" onclick="confirmarExclusao('<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>', '<?php echo htmlspecialchars( $value1["nome"], ENT_COMPAT, 'UTF-8', FALSE ); ?>')" class="icon delete">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="icon">

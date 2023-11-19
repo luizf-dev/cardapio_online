@@ -12,7 +12,7 @@
     <form action="/cardapio_online/cadastrar-imagem/<?php echo htmlspecialchars( $produtos["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/new/" method="POST" enctype="multipart/form-data">
         
 
-        <input type="hidden" name="id" value="<?php echo htmlspecialchars( $produtos["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+    <!--    <input type="hidden" name="id" value="<?php echo htmlspecialchars( $produtos["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>"> -->
 
         <div class="input-group">
             <label for="image"></label>
